@@ -6,23 +6,23 @@
 TEST(TEST1, TrueOrFalse) {
 textgen text = textgen("Test1.txt");
 srand(time(NULL));
-text.setprefixlength(1);
+text.setprelen(1);
 text.readfile();
-EXPECT_EQ("Hello ; hello ; goodbye ; bye ; ", text.getprefix());
+EXPECT_EQ("Hello ; hello ; goodbye ; bye ; ", text.getpre());
 }
 TEST(TEST2, TrueOrFalse) {
 textgen text = textgen("Test1.txt");
 srand(time(NULL));
-text.setprefixlength(3);
+text.setprelen(3);
 text.readfile();
 EXPECT_EQ("Hello hello goodbye ; hello goodbye hello ; "
 "goodbye hello bye ; hello bye Hello ; "
-"bye Hello hello ; ", text.getprefix());
+"bye Hello hello ; ", text.getpre());
 }
 TEST(TEST3, TrueOrFalse) {
 textgen text = textgen("Test2.txt");
 srand(time(NULL));
-text.setprefixlength(1);
+text.setprelen(1);
 text.readfile();
 EXPECT_EQ("I - love love love love ; "
 "love - pelmeni cinema chicken Enternet ; "
@@ -32,14 +32,14 @@ EXPECT_EQ("I - love love love love ; "
 TEST(TEST4, TrueOrFalse) {
 textgen text = textgen("Test2.txt");
 srand(time(NULL));
-text.setprefixlength(1);
+text.setprelen(1);
 text.readfile();
-EXPECT_EQ("I", text.getsuffix(3));
+EXPECT_EQ("I", text.getsuf(3));
 }
 TEST(TEST5, TrueOrFalse) {
 textgen text = textgen("Test2.txt");
 srand(time(NULL));
-text.setprefixlength(1);
+text.setprelen(1);
 text.readfile();
-EXPECT_EQ("chicken", text.getsuffix(2, 3));
+EXPECT_EQ("chicken", text.getsuf(2, 3));
 }
